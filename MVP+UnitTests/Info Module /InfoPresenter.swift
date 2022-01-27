@@ -14,7 +14,8 @@ protocol InfoViewProtocol: AnyObject {
 protocol InfoViewPresenterProtocol: AnyObject {
     init(view: InfoViewProtocol,
          networkManager: NetworkManagerProtocol,
-         currentPokemon: CurrentPokemonModel?)
+         currentPokemon: CurrentPokemonModel?,
+         router: RouterProtocol)
     func setPokemonInfo()
 }
 
@@ -22,13 +23,17 @@ class InfoViewPresenter: InfoViewPresenterProtocol {
     
     weak var view: InfoViewProtocol?
     var currentPokemon: CurrentPokemonModel?
-    var networkManager: NetworkManagerProtocol
+    var networkManager: NetworkManagerProtocol?
+    var router: RouterProtocol?
+    
     required init(view: InfoViewProtocol,
                   networkManager: NetworkManagerProtocol,
-                  currentPokemon: CurrentPokemonModel?) {
+                  currentPokemon: CurrentPokemonModel?,
+                  router: RouterProtocol) {
         self.view = view
         self.networkManager = networkManager
         self.currentPokemon = currentPokemon
+        self.router = router
     }
     
     func setPokemonInfo() {

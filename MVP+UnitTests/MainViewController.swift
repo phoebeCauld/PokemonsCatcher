@@ -68,8 +68,7 @@ class MainViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let currentPokemon = presenter?.pokemons?[indexPath.row] else { return }
-        let infoVC = ModuleBuilder.createInfoVC(pokemon: currentPokemon)
-        self.navigationController?.pushViewController(infoVC, animated: true)
+        presenter?.tapOnPokemon(pokemon: currentPokemon)
     }
 }
 

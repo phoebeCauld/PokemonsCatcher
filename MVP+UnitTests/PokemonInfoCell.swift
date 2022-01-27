@@ -28,6 +28,7 @@ class PokemonInfoCell: UICollectionViewCell {
     let pokemonName: UILabel = {
         let name = UILabel()
         name.font = .boldSystemFont(ofSize: 20)
+        name.textColor = .darkGray
         name.text = "Some cool name"
         name.numberOfLines = 0
         return name

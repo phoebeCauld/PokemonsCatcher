@@ -2,7 +2,7 @@
 //  InfoViewController.swift
 //  MVP+UnitTests
 //
-//  Created by F1xTeoNtTsS on 26.01.2022.
+//  Created by F1xTeoNtTsS on 27.01.2022.
 //
 
 import UIKit
